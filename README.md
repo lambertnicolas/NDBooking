@@ -38,11 +38,11 @@
 &nbsp;
 ## Etapes de développement 🍔
 
-- Imaginer et dessiner le schéma de la base de données.
-- Créer un environnement Laravel.
-- Effectuer la migration pour créer les tables de la BDD.
-- Mettre en ligne la BDD contenant des données fictives pour effectuer les tests.
-- Mettre l’application en ligne, créer les requêtes vers la base de données et les routes pour les liens API nécessaires.
+* Imaginer et dessiner le schéma de la base de données.
+* Créer un environnement Laravel.
+* Effectuer la migration pour créer les tables de la BDD.
+* Mettre en ligne la BDD contenant des données fictives pour effectuer les tests.
+* Mettre l’application en ligne, créer les requêtes vers la base de données et les routes pour les liens API nécessaires.
 * Créer :
 
   * Le design de l’application.
@@ -57,6 +57,7 @@
 
   * Un accès à une page « profil » où il est possible de modifier son adresse mail, son mot de passe et l’adresse du restaurant.
 
+* Tests et corrections d'éventuels bugs.
 &nbsp;
 ## Lien 🍟
 
