@@ -51,7 +51,7 @@
 
   * La page de réservation pour le consommateur où il peut choisir le jour et le service pour lequel il souhaite réserver, qu’il puisse cliquer sur une table et la réserver.
 
-  * Une page pour se loguer et avoir accès au dashboard associé à son restaurant.
+  * Une page pour le client (restaurateur) pour se loguer et avoir accès au dashboard associé à son restaurant.
 
   * Le dashboard comprenant la vision du plan de salle et des réservations en fonction de la date et du service choisi. La possibilité de réserver une table.
 
