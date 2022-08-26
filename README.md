@@ -58,6 +58,7 @@
   * Un accès à une page « profil » où il est possible de modifier son adresse mail, son mot de passe et l’adresse du restaurant.
 
 * Tests et corrections d'éventuels bugs.
+ 
 &nbsp;
 ## Lien 🍟
 
