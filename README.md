@@ -6,7 +6,7 @@
 
 ## Réalisation d'un module de réservation de table pour un restaurant.
 
-
+&nbsp;
 ## Fonctionnalités 🥗
 
 &nbsp;
@@ -45,17 +45,17 @@
 - Mettre l’application en ligne, créer les requêtes vers la base de données et les routes pour les liens API nécessaires.
 * Créer :
 
- * Le design de l’application.
+  * Le design de l’application.
 
- * Un environnement React et vérifier les connexions à l’Api.
+  * Un environnement React et vérifier les connexions à l’Api.
 
- * La page de réservation pour le consommateur où il peut choisir le jour et le service pour lequel il souhaite réserver, qu’il puisse cliquer sur une table et la réserver.
+  * La page de réservation pour le consommateur où il peut choisir le jour et le service pour lequel il souhaite réserver, qu’il puisse cliquer sur une table et la réserver.
 
- * Une page pour se loguer et avoir accès au dashboard associé à son restaurant.
+  * Une page pour se loguer et avoir accès au dashboard associé à son restaurant.
 
- * Le dashboard comprenant la vision du plan de salle et des réservations en fonction de la date et du service choisi. La possibilité de réserver une table.
+  * Le dashboard comprenant la vision du plan de salle et des réservations en fonction de la date et du service choisi. La possibilité de réserver une table.
 
- *  Un accès à une page « profil » où il est possible de modifier son adresse mail, son mot de passe et l’adresse du restaurant.
+  * Un accès à une page « profil » où il est possible de modifier son adresse mail, son mot de passe et l’adresse du restaurant.
 
 &nbsp;
 ## Lien 🍟
