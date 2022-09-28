@@ -21,10 +21,5 @@ Route::get('reservation', [ReservationController::class, 'index'])->name('reserv
 Route::post('reservation', [ReservationController::class, 'store'])->name('reservation.store');
 Route::get('reservation/{date}/{service}', [ReservationController::class, 'show'])->where(['date', '[a-z]+'], ['service', '[a-z]+']);
 
-//Route clients
-use App\Http\Controllers\ClientController;
-Route::get('/client', [ClientController::class,'index']);
-Route::post('/client', [ClientController::class,'store'])->middleware('App\Http\Middleware\ClientMiddleware');
-
 //Route::get('/tables', [TablesController::class,'index']);
 //Route::post('/tables', [TablesController::class,'store'])->middleware('App\Http\Middleware\TablesMiddleware');

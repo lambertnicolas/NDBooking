@@ -29,8 +29,8 @@ class Client extends Model
         'id' => 'integer',
     ];
 
-    public function reservation(): \Illuminate\Database\Eloquent\Relations\HasOne
+    public function reservation(): \Illuminate\Database\Eloquent\Relations\HasMany
     {
-        return $this->hasOne(Reservation::class, 'client_id', 'id');
+        return $this->hasMany(Reservation::class, 'client_id', 'id');
     }
 }

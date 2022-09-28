@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import Authenticated from '@/Layouts/Authenticated';
+import Authenticated from "../Layouts/AuthenticatedLayout";
 import { Head } from '@inertiajs/inertia-react';
 import ResponsiveNavLink from '@/Components/ResponsiveNavLink';
 import {Inertia} from "@inertiajs/inertia";
@@ -36,11 +36,10 @@ export default function Account(props, user) {
             errors={props.errors}
         >
             <Head title="Account" />
-            <h2 className="title is-2 ml-6">My account</h2>
             <div className="columns container">
-                <div className="column is-half ml-5">
+                <div className="column is-one-third is-offset-one-third box">
                     <form onSubmit={handleSubmit}>
-                        <label htmlFor="name" className="has-text-grey-light">Name :</label>
+                        <label htmlFor="name" className="label has-text-grey-light">Name :</label>
                         <input
                             id="name"
                             name="name"
@@ -50,7 +49,7 @@ export default function Account(props, user) {
                             className="input is-primary mb-3"
                             required
                         />
-                        <label htmlFor="email" className="has-text-grey-light">Email :</label>
+                        <label htmlFor="email" className="label has-text-grey-light">Email :</label>
                         <input
                             id="email"
                             name="email"
@@ -60,7 +59,7 @@ export default function Account(props, user) {
                             className="input is-primary mb-3"
                             required
                         />
-                        <label htmlFor="restaurant" className="has-text-grey-light">Restaurant :</label>
+                        <label htmlFor="restaurant" className="label has-text-grey-light">Restaurant :</label>
                         <input
                             id="restaurant"
                             name="restaurant"
@@ -70,7 +69,7 @@ export default function Account(props, user) {
                             className="input is-primary mb-3"
                             required
                         />
-                        <label htmlFor="address" className="has-text-grey-light">Address:</label>
+                        <label htmlFor="address" className="label has-text-grey-light">Address:</label>
                         <textarea
                             className="textarea is-primary mb-3"
                             id="address"
@@ -78,7 +77,7 @@ export default function Account(props, user) {
                             value={values.address}
                             onChange={handleChange}>
                         </textarea>
-                        <label htmlFor="password" className="has-text-grey-light">Password:</label>
+                        <label htmlFor="password" className="label has-text-grey-light">Password:</label>
                         <input
                             id="password"
                             name="password"
@@ -87,7 +86,7 @@ export default function Account(props, user) {
                             value={values.password}
                             className="input is-primary mb-3"
                         />
-                        <label htmlFor="password_confirmation" className="has-text-grey-light">Password confirmation:</label>
+                        <label htmlFor="password_confirmation" className="label has-text-grey-light">Password confirmation:</label>
                         <input
                             id="password_confirmation"
                             name="password_confirmation"

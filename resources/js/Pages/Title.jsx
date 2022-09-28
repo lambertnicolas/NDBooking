@@ -12,7 +12,7 @@ const textForm = {
     fontSize: "1.5rem"
 }
 // Name of the restaurant
-const restoName = "Italian restaurant"
+const restoName = "Casa de BeCode"
 
 const Title = () => {
     return (
@@ -21,8 +21,8 @@ const Title = () => {
                 <div className='hero-body'>
                     <p className='title has-text-centered' style={textForm}>Welcome to the booking page of</p>
                 </div>
-            </section>
-            <p className='subtitle has-text-centered' style={title}>{restoName}</p>
+            </section><br />
+            <p className='subtitle has-text-centered' style={title}>{restoName}</p>            
         </>
     );
 };

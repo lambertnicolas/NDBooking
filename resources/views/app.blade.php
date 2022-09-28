@@ -20,7 +20,7 @@
 <body class="font-sans antialiased">
 <nav class="navbar" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
-        <a class="navbar-item" href="https://bulma.io">
+        <a class="navbar-item" href="/">
             DevBar
         </a>
 
@@ -33,21 +33,31 @@
 
     <div id="navbarBasicExample" class="navbar-menu">
         <div class="navbar-start">
-            <a class="navbar-item" href="/reservation">
+            <a class="navbar-item" href="/">
                 Reservation
             </a>
-
+            <a class="navbar-item" href="/account">
+                Account
+            </a>
+            <a class="navbar-item" href="/booking">
+                Booking
+            </a>
             <div class="navbar-item has-dropdown is-hoverable">
                 <a class="navbar-link">
                     More
                 </a>
-
                 <div class="navbar-dropdown">
-                    <a class="navbar-item" href="/booking">
-                        Booking
+                    <a class="navbar-item" href="/users">
+                        Users
                     </a>
                     <a class="navbar-item" href="/services">
                         Services
+                    </a>
+                    <a class="navbar-item" href="/listen">
+                        Listen
+                    </a>
+                    <a class="navbar-item" href="/events">
+                        Events
                     </a>
                     <a class="navbar-item" href="/table_view/2202-09-09/dinner">
                         Tables availability

@@ -13,6 +13,10 @@ use Illuminate\Support\Facades\Broadcast;
 |
 */
 
-Broadcast::channel('App.Models.User.{id}', function ($user, $id) {
-    return (int) $user->id === (int) $id;
+Broadcast::channel('notification', function () {
+    return true;
+});
+
+Broadcast::channel('pending_reservation.{date}.{service}', function ($table_id) {
+    return $table_id;
 });

@@ -4,6 +4,9 @@ import "react-datepicker/dist/react-datepicker.css";
 import { createRoot } from "react-dom/client";
 import TableMapLunch from "./TableMapLunch";
 import TableMapDinner from "./TableMapDinner";
+import { Link } from "@inertiajs/inertia-react";
+import Swal from "sweetalert2";
+import TableMap from "./TableMap";
 
 const textForm = {
     fontFamily: "Poppins, cursive",
@@ -20,8 +23,14 @@ const flex = {
     flexWrap: "wrap",
 };
 
-const Services = () => {
+const Services = (props) => {
+    // On récupère la liste des tables et la liste des tables réservées
+    const booked = props.reservations;
+    const tables = props.tables;
+    const [service, setService] = useState(props.service);
+    var serv = service;
     const [selectedDate, setSelectedDate] = useState(new Date());
+    var selectDate = selectedDate
     const filterPassedTime = (time) => {
         const currentDate = new Date();
         const selectedDate = new Date(time);
@@ -33,17 +42,36 @@ const Services = () => {
         event.preventDefault();
 
         if (
-            new Date().getHours() > 14 &&
+            new Date().getHours() > 13 &&
             selectedDate.getDay() === new Date().getDay()
         ) {
-            alert("Too late for lunch !");
+            Swal.fire("Too late for lunch !");
         } else {
-            const serv = "lunch";
+            setService("lunch");
+            serv = "lunch";
             const container = document.getElementById("map");
             const root = createRoot(container);
 
+            const date = new Date(selectedDate);
+            var day = date.getDate();
+            var month = date.getMonth() + 1;
+            const year = date.getFullYear();
+
+            if (day < 10) {
+                day = "0" + day;
+            }
+
+            if (month < 10) {
+                month = "0" + month;
+            }
+            const newDate =
+                "/reservation/" + year + "-" + month + "-" + day + "/" + serv;
+            window.location.href = newDate;
+
             root.render(
                 <TableMapLunch
+                    bookedTables={booked}
+                    tables={tables}
                     service={serv}
                     selectedDate={selectedDate}
                     resLunch={function () {
@@ -54,21 +82,40 @@ const Services = () => {
         }
     };
 
-    const setDinner = (event) => {
+    const setDiner = (event) => {
         event.preventDefault();
 
         if (
-            new Date().getHours() > 20 &&
+            new Date().getHours() > 19 &&
             selectedDate.getDay() === new Date().getDay()
         ) {
-            alert("Too late for Dinner !");
+            Swal.fire("Too late for Diner !");
         } else {
-            const serv = "dinner";
+            setService("diner");
+            serv = "diner";
             const container = document.getElementById("map");
             const root = createRoot(container);
 
+            const date = new Date(selectedDate);
+            var day = date.getDate();
+            var month = date.getMonth() + 1;
+            const year = date.getFullYear();
+
+            if (day < 10) {
+                day = "0" + day;
+            }
+
+            if (month < 10) {
+                month = "0" + month;
+            }
+            const newDate =
+                "/reservation/" + year + "-" + month + "-" + day + "/" + serv;
+            window.location.href = newDate;
+
             root.render(
                 <TableMapDinner
+                    bookedTables={booked}
+                    tables={tables}
                     service={serv}
                     selectedDate={selectedDate}
                     resDinner={function () {
@@ -82,7 +129,7 @@ const Services = () => {
     return (
         <div className="container">
             <div className="columns" style={contain}>
-                <div className="column is-one-quarter" style={flex}>
+                <div className="column" style={flex}>
                     <div className="field">
                         <p className="control has-icons-left" style={textForm}>
                             Select a date:
@@ -93,9 +140,6 @@ const Services = () => {
                             filterTime={filterPassedTime}
                             dateFormat="dd/MM/yyyy"
                             minDate={new Date()}
-                            // filterDate={date => date.getDay() !== 1 && date.getDay() !== 2}
-                            // timeClassName={handleColor}
-                            // placeholderText="Click here"
                             withPortal
                         />
                         <br />
@@ -104,7 +148,7 @@ const Services = () => {
                         </p>
                         <div id="test"></div>
                         <button
-                            className="button is-primary is-rounded"
+                            className="button is-primary "
                             type="button"
                             onClick={setLunch}
                         >
@@ -112,15 +156,22 @@ const Services = () => {
                         </button>
                         &nbsp;&nbsp;
                         <button
-                            className="button is-link is-rounded"
+                            className="button is-link "
                             type="button"
-                            onClick={setDinner}
+                            onClick={setDiner}
                         >
                             Diner
                         </button>
                     </div>
                 </div>
-                <div id="map" style={flex}></div>
+                <div id="map" style={flex}>
+                    <TableMap
+                        bookedTables={booked}
+                        tables={tables}
+                        service={serv}
+                        selectedDate={selectedDate}
+                    />
+                </div>
             </div>
         </div>
     );

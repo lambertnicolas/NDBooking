@@ -1,7 +1,9 @@
 import React from "react";
 import ResLunch from "./ResLunch";
-import { createRoot } from "react-dom/client";
-import "./TableMapLunch.css";
+import { createRoot } from "react-dom";
+import "./TableMap.css";
+import { useState } from "react";
+import Swal from "sweetalert2";
 
 const textForm = {
     fontFamily: "Poppins, cursive",
@@ -18,53 +20,58 @@ const mapTable = {
     width: "30rem",
 };
 
-const tables = [
-    { id: 1, name: "ocean", size: "2", free: "y" },
-    { id: 2, name: "forest", size: "2", free: "y" },
-    { id: 3, name: "mountain", size: "2", free: "n" },
-    { id: 4, name: "rock", size: "4", free: "y" },
-    { id: 5, name: "hill", size: "8", free: "n" },
-    { id: 6, name: "lake", size: "6", free: "y" },
-    { id: 7, name: "niagara", size: "6", free: "n" },
-    { id: 8, name: "leaf", size: "2", free: "n" },
-    { id: 9, name: "everest", size: "4", free: "n" },
-    { id: 10, name: "nico", size: "2", free: "n" },
-    { id: 11, name: "duc", size: "2", free: "y" },
-];
-
 function reserved() {
-    alert("Reserved !");
+    Swal.fire("Reserved !");
 }
 
 const TableMapLunch = (props) => {
-    const resLunch = (val) => {
+
+    const bookedTables = props.bookedTables;
+    const tables = props.tables;
+    
+    console.log(tables);
+    console.log(bookedTables);
+    
+    bookedTables.map((res) => {
+        tables[res.table_id - 1].free = "n";
+    });
+
+    const [tableNum, setTableNum] = useState("");
+    const resLunch = (val, tSize) => {
         const container = document.getElementById("form");
         const root = createRoot(container);
-
+        setTableNum(val.toString());
         root.render(
             <ResLunch
                 service={props.service}
                 selectedDate={props.selectedDate}
                 table={val}
+                TableSize={tSize}
             />
         );
     };
 
     return (
-        <div className=" is-two-fifths">
+        <div className="column">
             <p className="control has-icons-left" style={textForm}>
-                Select a table:
+                Table selected: {tableNum}
             </p>
-            <div style={mapTable}>
+            <div className="contain">
+                <div className="t12"></div>
+                <div className="t16"></div>
+                <div className="t17"></div>
+                <div className="t18"></div>
+                <div className="t22"></div>
                 {tables.map((table) => {
                     if (table.free === "y") {
                         return (
                             <div
                                 key={table.id}
-                                className={"t" + table.id.toString()}
+                                className={"t" + table.id}
                                 onClick={function () {
                                     const tN = table.id;
-                                    resLunch(tN);
+                                    const tSize = table.capacity;
+                                    resLunch(tN, tSize);
                                 }}
                             ></div>
                         );
@@ -72,7 +79,7 @@ const TableMapLunch = (props) => {
                         return (
                             <div
                                 key={table.id}
-                                className={"tr" + table.id.toString()}
+                                className={"tr" + table.id}
                                 onClick={reserved}
                             ></div>
                         );

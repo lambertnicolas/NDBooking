@@ -4,6 +4,7 @@ import ReactDatePicker from "react-datepicker";
 import setHours from "date-fns/setHours";
 import setMinutes from "date-fns/setMinutes";
 import {Inertia} from "@inertiajs/inertia";
+import Swal from "sweetalert2";
 
 const textForm = {
     fontFamily: "Poppins, cursive",
@@ -17,13 +18,15 @@ const flex = {
 };
 
 const ResDinner = (props) => {
+    
     const nbrPeopleRef = useRef();
     const nameInputRef = useRef();
     const phoneInputRef = useRef();
     const emailInputRef = useRef();
 
-    const submitHandler = (event) => {
+    const submitHandler = async (event) => {
         event.preventDefault();
+        
         // Envoi les saisies dans les variables
         // const enteredPeople = nbrPeopleRef.current.value
         const enteredName = nameInputRef.current.value;
@@ -31,20 +34,18 @@ const ResDinner = (props) => {
         const enteredEmail = emailInputRef.current.value;
         const service = props.service;
         const selectedDate = props.selectedDate;
-        // const date = new Date(selectedDate).getDay()
-        // const hour = new Date(startTime).getHours()
         // Affichage du contenu des variables dans la console
-        const answer = window.confirm("Are you sure ?");
-        if (answer) {
+        const answer = Swal.fire("Thank you!", "Booking's done!", "success");
+        if (await answer) {
             // Save it!
-            //     console.log("Service: " + service);
-            //     console.log("Date: " + selectedDate);
-            //     console.log("Table number: " + props.table);
-            //     console.log("Hour: " + startTime);
-            //     console.log("Number of people: " + nbrP);
-            //     console.log("Name: " + enteredName);
-            //     console.log("Phone: " + enteredPhone);
-            //     console.log("Email: " + enteredEmail);
+                console.log("Service: " + service);
+                console.log("Date: " + selectedDate);
+                console.log("Table number: " + props.table);
+                console.log("Hour: " + startTime);
+                console.log("Number of people: " + nbrP);
+                console.log("Name: " + enteredName);
+                console.log("Phone: " + enteredPhone);
+                console.log("Email: " + enteredEmail);
             // Envoi des données au serveur
             const formData = {
                 name: enteredName,
@@ -59,6 +60,23 @@ const ResDinner = (props) => {
 
             //Renvoie vers la route post
             Inertia.post('/reservation', formData)
+            //Retour à la page home apres la réservation
+            
+            const date = new Date(selectedDate)
+            var day = date.getDate()
+            var month = date.getMonth() + 1
+            const year = date.getFullYear()
+    
+            if (day < 10) {
+                day = '0' + day;
+              }
+              
+              if (month < 10) {
+                month = '0' + month;
+              }
+            const newDate = "/reservation/" + year + "-" + month + "-" + day + "/" + service
+            window.location.href = newDate
+
         } else {
             // Do nothing!
             console.log("Things was not saved to the database.");
@@ -79,30 +97,13 @@ const ResDinner = (props) => {
         return currentDate.getTime() < selectedTime.getTime();
     };
 
-    /*   const hours = [
-          { value: '', text: '--Choose a hour--' },
-          { value: '18:00', text: '18:00' },
-          { value: '18:30', text: '18:30' },
-          { value: '19:00', text: '19:00' },
-          { value: '19:30', text: '19:30' },
-          { value: '20:00', text: '20:00' },
-          { value: '20:30', text: '20:30' },
-          { value: '21:00', text: '21:00' },
-      ]
-
-      const [hour, setHour] = useState(hours[0].value)
-
-      const handleChange = (event: any) => {
-          event.preventDefault()
-          //console.log(event.target.value)
-          setHour(event.target.value)
-      } */
-
     const nbrPs = [
         { value: "", text: "--Choose a number of people--" },
-        { value: "2", text: "2" },
-        { value: "4", text: "4" },
-        { value: "6", text: "6" },
+        { value: 2, text: '2' },
+        { value: 3, text: '3' },
+        { value: 4, text: '4' },
+        { value: 5, text: '5' },
+        { value: 6, text: '6' }
     ];
 
     const [nbrP, setNbrP] = useState(nbrPs[0].value);
@@ -148,6 +149,13 @@ const ResDinner = (props) => {
             />
         );
     }
+    if(nbrP > props.TableSize) {
+        Swal.fire('Max ' + props.TableSize + ' persons for this table !')
+        setNbrP (nbrPs[0].value)
+    }else if (nbrP < (props.TableSize -1) && nbrP != '') {
+        Swal.fire('Min ' + (props.TableSize -1) + ' persons for this table !')
+        setNbrP (nbrPs[0].value)
+    }
 
     return (
         <div>
@@ -157,17 +165,6 @@ const ResDinner = (props) => {
                         Arrival time:
                     </p>
                     <div className="field">{timeCheck}</div>
-
-                    {/* <div className='select'>
-                        <select value={hour} onChange={handleChange} required>
-                            {hours.map(option => (
-                                <option key={option.value} value={option.value}>
-                                    {option.text}
-                                </option>
-                            ))}
-                        </select>
-                    </div> */}
-
                     <p className="control has-icons-left" style={textForm}>
                         Number of people:
                     </p>
@@ -232,7 +229,7 @@ const ResDinner = (props) => {
 
                     <div className="field">
                         <p className="control">
-                            <button
+                        <button
                                 className="button is-success"
                                 type={"submit"}
                                 onClick={() => {}}

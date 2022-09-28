@@ -44,4 +44,8 @@ class Reservation extends Model
     {
         return $this->hasOne(Table::class, 'table_id', 'id');
     }
+    public function scopeDate($query, $date)
+    {
+        return $query->where('date', $date);
+    }
 }

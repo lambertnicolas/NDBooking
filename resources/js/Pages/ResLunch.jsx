@@ -4,6 +4,7 @@ import ReactDatePicker from "react-datepicker";
 import setHours from "date-fns/setHours";
 import setMinutes from "date-fns/setMinutes";
 import {Inertia} from "@inertiajs/inertia";
+import Swal from "sweetalert2";
 
 const textForm = {
     fontFamily: "Poppins, cursive",
@@ -17,23 +18,23 @@ const flex = {
 };
 
 const ResLunch = (props) => {
+    
     const nbrPeopleRef = useRef();
     const nameInputRef = useRef();
     const phoneInputRef = useRef();
-    const emailInputRef = useRef();
+    const emailInputRef = useRef();    
 
-    const submitHandler = (event) => {
+    const submitHandler = async (event) => {
         event.preventDefault();
         // Envoi les saisies dans les variables
-        // const enteredPeople = nbrPeopleRef.current.value
         const enteredName = nameInputRef.current.value;
         const enteredPhone = phoneInputRef.current.value;
         const enteredEmail = emailInputRef.current.value;
         const service = props.service;
         const selectedDate = props.selectedDate;
         // Affichage du contenu des variables dans la console
-        const answer = window.confirm("Are you sure ?");
-        if (answer) {
+        const answer = Swal.fire("Thank you!", "Booking's done!", "success");
+        if (await answer) {
             // Save it!
             console.log("Service: " + service);
             console.log("Date: " + selectedDate);
@@ -57,6 +58,23 @@ const ResLunch = (props) => {
 
             //Renvoie vers la route post
             Inertia.post('/reservation', formData)
+            //Retour à la page home apres la réservation
+            
+            const date = new Date(selectedDate)
+            var day = date.getDate()
+            var month = date.getMonth() + 1
+            const year = date.getFullYear()
+    
+            if (day < 10) {
+                day = '0' + day;
+              }
+              
+              if (month < 10) {
+                month = '0' + month;
+              }
+            const newDate = "/reservation/" + year + "-" + month + "-" + day + "/" + service
+            window.location.href = newDate
+
         } else {
             // Do nothing!
             console.log("Things was not saved to the database.");
@@ -76,29 +94,13 @@ const ResLunch = (props) => {
         return currentDate.getTime() < selectedTime.getTime();
     };
 
-    /* const hours = [
-        { value: '', text: '--Choose a hour--' },
-        { value: '12:00', text: '12:00' },
-        { value: '12:30', text: '12:30' },
-        { value: '13:00', text: '13:00' },
-        { value: '13:30', text: '13:30' },
-        { value: '14:00', text: '14:00' },
-        { value: '14:30', text: '14:30' }
-    ]
-
-    const [hour, setHour] = useState(hours[0].value)
-
-    const handleChange = (event: any) => {
-        event.preventDefault()
-        //console.log(event.target.value)
-        setHour(event.target.value)
-    } */
-
     const nbrPs = [
         { value: "", text: "--Choose a number of people--" },
-        { value: "2", text: "2" },
-        { value: "4", text: "4" },
-        { value: "6", text: "6" },
+        { value: 2, text: '2' },
+        { value: 3, text: '3' },
+        { value: 4, text: '4' },
+        { value: 5, text: '5' },
+        { value: 6, text: '6' }
     ];
 
     const [nbrP, setNbrP] = useState(nbrPs[0].value);
@@ -125,7 +127,7 @@ const ResLunch = (props) => {
                 withPortal
                 required
             />
-        );
+        )
     } else {
         timeCheck = (
             <ReactDatePicker
@@ -141,7 +143,14 @@ const ResLunch = (props) => {
                 withPortal
                 required
             />
-        );
+        )
+    }
+    if(nbrP > props.TableSize) {
+        Swal.fire('Max ' + props.TableSize + ' persons for this table !')
+        setNbrP (nbrPs[0].value)
+    }else if (nbrP < (props.TableSize -1) && nbrP != '') {
+        Swal.fire('Min ' + (props.TableSize -1) + ' persons for this table !')
+        setNbrP (nbrPs[0].value)
     }
 
     return (
@@ -152,17 +161,6 @@ const ResLunch = (props) => {
                         Arrival time:
                     </p>
                     <div className="field">{timeCheck}</div>
-
-                    {/* <div className='select'>
-                        <select value={hour} onChange={handleChange} required>
-                            {hours.map(option => (
-                                <option key={option.value} value={option.value}>
-                                    {option.text}
-                                </option>
-                            ))}
-                        </select>
-                    </div> */}
-
                     <p className="control has-icons-left" style={textForm}>
                         Number of people:
                     </p>
