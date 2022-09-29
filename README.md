@@ -130,4 +130,4 @@
 
 **Nico :** Dans les semaines à venir je dois passer sur le projet de la Croix-rouge Jeunesse dans lequel je suis engagé. Dès que possible j'aimerais revenir sur ce projet pour lequel j'ai encore beaucoup d'idées à développer. En fonction de ma recherche de stage j'aimerais continuer mon apprentissage de Laravel et/ou typescript + react ou vue.
 
-**Duc :**
+**Duc :** Pour ma part, les semaines à venir seront d'abord consacrés à React, Vue et Tailwind (il peut y avoir du changement en fonction des technos qui seront utilisés lors du stage). Celà ne m'empêchera pas non plus de revenir sur ce projet, en concertation avec Nico, afin d'y joindre de nouvelles fonctionnalités mais surtout terminer les objectifs qu'on s'était fixés au départ du projet.
