@@ -110,7 +110,7 @@
 
 - Si il ne défini pas une date et un service, on affiche le "lunch" jusque 15h00, ensuite on affiche le "diner".
 - Il peut voir les tables libres et réservées sur le plan de salle.
-- Il peut aussi voir les réservations par slot de 1h. Lorsqu'un slot contient plus de 10 couverts il devient rouge.
+- Il peut aussi voir les réservations par slot de 1h. Lorsqu'un slot contient plus de 10 couverts il devient rouge (pour aider le restaurateur à anticiper sa mise en place).
 - Il peut supprimer une réservation.
 - Il peut changer de date et/ou service pour voir les réservations.
 - Il peut entrer lui même une réservation qu'il reçoit par téléphone.
