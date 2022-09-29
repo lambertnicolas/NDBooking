@@ -1,0 +1,209 @@
+.contain {
+    background-color: white;
+    border: 5px solid rgb(159, 158, 158);
+    display: grid; 
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr; 
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr; 
+    gap: 0px 0px; 
+    grid-template-areas: 
+      "t4 t5 t6 t7 t8"
+      "t18 t19 t20 t21 t22"
+      "t3 t11 t25 t10 t9"
+      "t2 t17 t17 t23 t12"
+      "t1 t16 t15 t14 t12"; 
+  }
+  .t1, .tr1 { grid-area: t1; }
+  .t2, .tr2 { grid-area: t2; }
+  .t3, .tr3 { grid-area: t3; }
+  .t4, .tr4 { grid-area: t4; }
+  .t5, .tr5 { grid-area: t5; border-right: 10px solid rgb(159, 158, 158); }
+  .t6, .tr6 { grid-area: t6; }
+  .t7, .tr7 { grid-area: t7; }
+  .t8, .tr8 { grid-area: t8; }
+  .t9, .tr9 { grid-area: t9; }
+  .t10, .tr10 { grid-area: t10; }
+  .t11, .tr11 { grid-area: t11; border-left: 10px solid rgb(159, 158, 158); }
+  .t12, .tr12 { grid-area: t12; }
+  .t13, .tr13 { grid-area: t13; }
+  .t14, .tr14 { grid-area: t14; }
+  .t15, .tr15 { grid-area: t15; }
+  .t16, .tr16 { grid-area: t16; }
+  .t17, .tr17 { grid-area: t17; }
+  .t18, .tr18 { grid-area: t18; }
+  .t19, .tr19 { grid-area: t19; }
+  .t20, .tr20 { grid-area: t20; }
+  .t21, .tr21 { grid-area: t21; }
+  .t22, .tr22 { grid-area: t22; }
+  .t23, .tr23 { grid-area: t23; }
+  .t24, .tr24 { grid-area: t24; }
+  .t25, .tr25 { grid-area: t25; }
+
+.t1 {
+    content: url('./img/t2.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    
+}
+.tr1 {
+    content: url('./img/tr2.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    
+}
+.t2 {
+    content: url('./img/t2.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    
+}
+.tr2 {
+    content: url('./img/tr2.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    
+}
+.t3 {
+    content: url('./img/t2.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    
+}
+.tr3 {
+    content: url('./img/tr2.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    
+}
+.t4 {
+    content: url('./img/t4.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    
+}
+.tr4 {
+    content: url('./img/tr4.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    
+}
+.t5 {
+    content: url('./img/t2.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    
+}
+.tr5 {
+    content: url('./img/tr2.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    
+}
+.t6 {
+    content: url('./img/t2.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;    
+    
+}
+.tr6 {
+    content: url('./img/tr2.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    
+}
+.t7 {
+    content: url('./img/t2.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    
+}
+.tr7 {
+    content: url('./img/tr2.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    
+}
+.t8 {
+    content: url('./img/t2.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    
+}
+.tr8 {
+    content: url('./img/tr2.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    
+}
+.t9 {
+    content: url('./img/t4.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    
+}
+.tr9 {
+    content: url('./img/tr4.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    
+}
+.t10 {
+    content: url('./img/t2.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    
+}
+.tr10 {
+    content: url('./img/tr2.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.t11 {
+    content: url('./img/t6.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    transform: rotate(-90deg);
+}
+.tr11 {
+    content: url('./img/tr6.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    transform: rotate(-90deg);
+}
+.t12 {
+    content: url('./img/bar4.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.tr12 {
+    content: url('./img/bar.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.t15 {
+    border-bottom: 10px solid black;
+}
+
+.t17 {
+    content: url('./img/logo.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.t18 {
+    content: url('./img/plant.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.t22 {
+    content: url('./img/plant.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.t16 {
+    content: url('./img/plant.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
