@@ -114,6 +114,7 @@
 - Il peut supprimer une réservation.
 - Il peut changer de date et/ou service pour voir les réservations.
 - Il peut entrer lui même une réservation qu'il reçoit par téléphone.
+- Une réservation ne peut etre modifiée car on part du principe qu'une table est réservée pour tout le service (fonctionnalitée à développer lorsqu'on implémentera la gestion d'un double service).
 
 &nbsp;
 
