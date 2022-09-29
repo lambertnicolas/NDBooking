@@ -1,64 +1,134 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+# ND Booking 🍴
 
-## About Laravel
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## Réalisation d'un module de réservation de table pour un restaurant.
 
-## Learning Laravel
+&nbsp;
+## Fonctionnalités 🥗
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+&nbsp;
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+**Le client (restaurateur) doit pouvoir :**
 
-## Laravel Sponsors
+- Ajouter un bouton sur son site renvoyant le visiteur sur le module de réservation destiné à ce même restaurant.
+- S’authentifier pour avoir accès à son dashboard.
+- Voir le nombre de réservation en temps réel et pour les jours et services à venir (tables réservées, nombre de couverts).
+- Réserver des tables.
+- Pour son compte, changer son mot de passe, son adresse email et l’adresse du restaurant.
+- Recevoir des notifications lorsqu’une nouvelle réservation est enregistrée.
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+&nbsp;
 
-### Premium Partners
+**Le consommateur (client du restaurant) doit pouvoir :**
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+- Voir les tables disponibles, en cours de réservation et réservées en temps réel.
+- Voir ces disponibilités pour les prochains jours aussi bien pour le service de midi que celui du soir.
+- Recevoir une confirmation que la réservation a bien été prise en compte et lui rappeler les informations telles que la date, l’heure et l’adresse du restaurant.
 
-## Contributing
+&nbsp;
+## Techno 🍕
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+**Front:** React, Typescript,Bulma
 
-## Code of Conduct
+**Back:** Laravel, Mysql
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+&nbsp;
+## Etapes de développement 🍔
 
-## Security Vulnerabilities
+* Imaginer et dessiner le schéma de la base de données.
+* Créer un environnement Laravel.
+* Effectuer la migration pour créer les tables de la BDD.
+* Mettre en ligne la BDD contenant des données fictives pour effectuer les tests.
+* Mettre l’application en ligne, créer les requêtes vers la base de données et les routes pour les liens API nécessaires.
+* Créer :
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+  * Le design de l’application.
 
-## License
+  * Un environnement React et vérifier les connexions à l’Api.
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+  * La page de réservation pour le consommateur où il peut choisir le jour et le service pour lequel il souhaite réserver, qu’il puisse cliquer sur une table et la réserver.
+
+  * Une page pour le client (restaurateur) pour se loguer et avoir accès au dashboard associé à son restaurant.
+
+  * Le dashboard comprenant la vision du plan de salle et des réservations en fonction de la date et du service choisi. La possibilité de réserver une table.
+
+  * Un accès à une page « profil » où il est possible de modifier son adresse mail, son mot de passe et l’adresse du restaurant.
+
+* Tests et corrections d'éventuels bugs.
+ 
+&nbsp;
+## Lien 🍟
+
+ - Deploiement en cours
+
+&nbsp;
+## Auteurs 🍗
+
+- [@lambertnicolas](https://github.com/lambertnicolas)
+- [@luuduc34](https://github.com/luuduc34)
+
+&nbsp;
+
+## Conclusion de fin de montagne 📝
+
+&nbsp;
+
+**Ce qui a été réalisé :**
+
+- La page d'accueil affiche par défaut le prochain service à venir :
+  * Avant 14h30, on affiche le "lunch"
+  * Entre 14h30 et 20h00, on affiche le "diner"
+  * Après 20h00, on affiche le "lunch" du lendemain
+
+![Page d'accueil](https://raw.githubusercontent.com/lambertnicolas/NDBooking/main/resources/img/ndb1.jpg)
+- Les tables réservées sont grisées. Quelque soient la date et le service choisi.Cliquer sur une table réservée renvoie un message d'erreur à l'utilisateur. Pour l'affichage des messages nous utilisons [SweetAlert2](https://sweetalert2.github.io/)
+
+![Réservations](https://raw.githubusercontent.com/lambertnicolas/NDBooking/main/resources/img/ndb4.jpg)
+
+- La date et le service choisi (ou ceux par défaut) sont affichés au dessus du plan de salle.
+- Lorsque l'utilisateur choisi une table disponible, le formulaire de réservation apparait.
+
+![Formulaire](https://raw.githubusercontent.com/lambertnicolas/NDBooking/main/resources/img/ndb2.jpg)
+
+- Le choix du "Arrival time" change en fonction du service choisi. Les heures qui ne font pas partie de la tranche horaire du service sont grisées. Pour la gestion des dates et heures nous utilisons [react-datePicker](https://reactdatepicker.com/).
+- Des règles sont appliquées au choix du nombre de personne en fonction de la table choisie. Une table de 2 ne pourra pas accueillir 3 personnes, une table de 4 n'acceptera pas moins de 3 personnes et pour une table de 6 il faudra être 5.
+- Tous les champs sont requis pour pouvoir valider le formulaire.
+- Une fois validé, l'utilisateur est redirigé vers la plan de salle à la date et service pour lesquels il vient d'enregistrer sa réservation. Il peut ainsi voir que la table qu'il a choisi est grisée et ne peut plus être réservée par un autre utilisateur.
+- Un email de confirmation contenant la date, l'heure d'arrivée, le nombre de personne et le numéro de la table lui est envoyé.
+- Entre temps, le back-end a vérifié que l'utilisateur (identifié avec son numéro de téléphone) n'a pas déjà réservé une table pour ce service à cette date.Dans ce cas il recevra un message d'erreur.
+- L'utilisateur est enregistré dans la base de donnée en même temps que sa réservation. Si il a déjà réservé une table dans le passé (via ce numéro de téléphone) il n'est pas créé une deuxième fois (ce qui pourrait permettre d'incrémenter un compteur de réservations).
+- Lorsque la réservation est validée, un évènement contenant le numéro de la table est envoyé via [Pusher](https://pusher.com/) aux utilisateurs qui se trouvent sur le même service.
+
+&nbsp;
+
+- Une fois connecté, le restaurateur a accès au dashboard.
+
+![DashBoard](https://raw.githubusercontent.com/lambertnicolas/NDBooking/main/resources/img/ndb3.jpg)
+
+- Si il ne défini pas une date et un service, on affiche le "lunch" jusque 15h00, ensuite on affiche le "diner".
+- Il peut voir les tables libres et réservées sur le plan de salle.
+- Il peut aussi voir les réservations par slot de 1h. Lorsqu'un slot contient plus de 10 couverts il devient rouge (pour aider le restaurateur à anticiper sa mise en place).
+- Il peut supprimer une réservation.
+- Il peut changer de date et/ou service pour voir les réservations.
+- Il peut entrer lui même une réservation qu'il reçoit par téléphone.
+- Une réservation ne peut etre modifiée car on part du principe qu'une table est réservée pour tout le service (fonctionnalitée à développer lorsqu'on implémentera la gestion d'un double service).
+
+&nbsp;
+
+**Ce qu'il reste à faire :**
+
+- Déploiment (en cours)
+- Faire passer en temps réel une table réservée avec l'évènement renvoyé par Pusher.
+- Envoyer une notification au restaurateur lorsqu'une nouvelle réservation est validée.
+- Design de la page "account" du restaurateur.
+
+&nbsp;
+
+**Suite de notre parcours et du projet :**
+
+**Nico :** Dans les semaines à venir je dois passer sur le projet de la Croix-rouge Jeunesse dans lequel je suis engagé. Dès que possible j'aimerais revenir sur ce projet pour lequel j'ai encore beaucoup d'idées à développer. En fonction de ma recherche de stage j'aimerais continuer mon apprentissage de Laravel et/ou typescript + react ou vue.
+
+**Duc :** Pour ma part, les semaines à venir seront d'abord consacrés à React, Vue et Tailwind (il peut y avoir du changement en fonction des technos qui seront utilisés lors du stage). Celà ne m'empêchera pas non plus de revenir sur ce projet, en concertation avec Nico, afin d'y joindre de nouvelles fonctionnalités mais surtout terminer les objectifs qu'on s'était fixés au départ du projet.
