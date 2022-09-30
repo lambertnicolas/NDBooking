@@ -96,6 +96,7 @@ Màj 29-09-2022 : Conclusion de fin de montagne 📝
 
 - Le choix du "Arrival time" change en fonction du service choisi. Les heures qui ne font pas partie de la tranche horaire du service sont grisées. Pour la gestion des dates et heures nous utilisons [react-datePicker](https://reactdatepicker.com/).
 - Des règles sont appliquées au choix du nombre de personne en fonction de la table choisie. Une table de 2 ne pourra pas accueillir 3 personnes, une table de 4 n'acceptera pas moins de 3 personnes et pour une table de 6 il faudra être 5.
+- Il y a un controle (RegEx) sur le numero de telephone et l'email.
 - Tous les champs sont requis pour pouvoir valider le formulaire.
 - Une fois validé, l'utilisateur est redirigé vers la plan de salle à la date et service pour lesquels il vient d'enregistrer sa réservation. Il peut ainsi voir que la table qu'il a choisi est grisée et ne peut plus être réservée par un autre utilisateur.
 - Un email de confirmation contenant la date, l'heure d'arrivée, le nombre de personne et le numéro de la table lui est envoyé.
