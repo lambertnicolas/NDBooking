@@ -63,7 +63,11 @@ Màj 29-09-2022 : Conclusion de fin de montagne 📝
 &nbsp;
 ## Lien 🍟
 
- - Deploiement en cours
+ - [Application](https://module.ndbooking.software)
+ - [DashBoard](https://module.ndbooking.software/login)
+ 
+ Email : admin@admin.com
+ Password : ndbooking
 
 &nbsp;
 ## Auteurs 🍗
@@ -122,7 +126,6 @@ Màj 29-09-2022 : Conclusion de fin de montagne 📝
 
 **Ce qu'il reste à faire :**
 
-- Déploiment (en cours)
 - Faire passer en temps réel une table réservée avec l'évènement renvoyé par Pusher.
 - Envoyer une notification au restaurateur lorsqu'une nouvelle réservation est validée.
 - Design de la page "account" du restaurateur.
